@@ -8,7 +8,6 @@ import {dirname} from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
-const port = 3000;
 
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -135,11 +134,17 @@ app.post("/deleted",(req,res)=>{
 
 })
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port);
+
 app.listen(port,(err)=>{
     if(err){
         console.log(err);
     }else{
-        console.log(`I Love You ${port}`);
+        console.log(`Server Has Started On Port ${port}`);
     }
 })
 
