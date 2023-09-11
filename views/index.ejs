@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="https://doniws.github.io/FontAwesome6Pro/pro/css/all.css">
+    <title>Just Do It</title>
+</head>
+<body>
+    <section class="min-vh-100" style="background-color: #e2d5de;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center h-100 py-5">
+                <div class="col col-lg-8">
+                    <div class="card" style="border-radius: 15px">
+                        <div class="card-body p-5">
+                            <h1>Just Do It</h1>
+                            <form action="/" method="post" class="d-flex justify-content-center align-items-center mb-4">
+                                <div class="form-outline flex-fill">
+                                    <input type="text" class="form-control form-control-lg todo-field" name="newItem">
+                                    <label class="form-label mt-2" for="form3">What do you need to do today?</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg ms-2 add-btn align-self-start" value="<%=listName%>" name="addBtn">Add</button>
+                            </form>
+                            <%-include("list.ejs")%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
